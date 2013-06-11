@@ -1,0 +1,30 @@
+<?php
+namespace Petlost\FrontBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Entity(repositoryClass="Petlost\FrontBundle\Entity\EncontradoRepository")
+ */
+class Encontrado {
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    /**
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank()
+    */
+    protected $telefono;
+    /**
+     * @ORM\ManyToOne(targetEntity="Petlost\FrontBundle\Entity\Anuncio", cascade={"remove"})
+    */
+    protected $anuncio;
+    
+    
+}
+
+

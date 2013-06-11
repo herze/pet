@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+<form action="{{ path('front_addmascota') }}" method="post" {{ form_enctype(formm) }}>
+<div>
+{{ form_errors(formm) }}
+
+<div>
+{{ form_row(formm.nombre) }}
+</div>
+
+<div>
+{{ form_label(formm.categoria) }}
+{{ form_errors(formm.categoria) }}
+{{ form_widget(formm.categoria, { 'attr': { 'class': 'largo' } }) }} 
+</div>
+
+<div>
+{{ form_label(formm.sexo) }}
+{{ form_errors(formm.sexo) }}
+{{ form_widget(formm.sexo, { 'attr': { 'class': 'largo' } }) }}
+</div>
+
+        <div>
+        {{ form_label(formm.raza) }}
+        {{ form_errors(formm.raza) }}
+        {{ form_widget(formm.raza, { 'attr': { 'class': 'largo' } }) }}
+            </div>
+        <div>
+        {{ form_label(formm.identificacion) }}
+        {{ form_errors(formm.identificacion) }}
+        {{ form_widget(formm.identificacion, { 'attr': { 'class': 'largo' } }) }}
+            </div>
+        <div>
+        {{ form_label(formm.enfermedad) }}
+        {{ form_errors(formm.enfermedad) }}
+        {{ form_widget(formm.enfermedad, { 'attr': { 'class': 'largo' } }) }}
+            </div>
+       
+        
+        <ul class="tags" data-prototype="{{ form_widget(formm.fotos.vars.prototype)|e }}">
+            
+        </ul>
+
+
+{{ form_rest(formm) }}
+
+<input class="boton" type="submit" value="Registrarme" />
+
+</div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+front_homepage:
+    pattern:  /
+    defaults: { _controller: FrontBundle:Default:index }
+
+front_addmascota:
+    pattern:  /mascota/add
+    defaults: { _controller: FrontBundle:Default:addmascota }
+    
+front_addanuncio:
+    pattern:  /anuncio/add
+    defaults: { _controller: FrontBundle:Default:addanuncio }
